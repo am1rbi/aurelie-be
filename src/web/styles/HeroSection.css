@@ -1,0 +1,212 @@
+/* Hero section styles */
+.hero-section {
+  min-height: 100vh;
+  position: relative;
+  margin-top: 0;
+  padding-top: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  direction: rtl;
+  background-color: #000;
+  overflow: hidden;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('https://res.cloudinary.com/amir180685/image/upload/f_auto,q_auto/omhfjdtbb5s3njresjhi');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 0.6;
+}
+
+.hero-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.4) 60%,
+    rgba(0, 0, 0, 0.95) 90%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+
+.content-section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 10px;
+  position: relative;
+}
+
+.text-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  color: white;
+  position: relative;
+}
+
+.hero-title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.main-title {
+  color: white;
+  font-size: 4.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 0.8s ease-out;
+  margin: 0;
+}
+
+.carousel-container {
+  font-size: 4.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  animation: fadeInUp 0.8s ease-out 0.1s backwards;
+  height: 1.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-content p {
+  color: white;
+  font-size: 1.375rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  font-weight: 300;
+  animation: fadeInUp 0.8s ease-out 0.2s backwards;
+}
+
+/* Fix for background attachment on iOS */
+@supports (-webkit-touch-callout: none) {
+  .hero-background {
+    background-attachment: scroll;
+  }
+}
+
+/* CTA Button styles */
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+  width: 100%;
+  padding: 0 1rem;
+  position: relative;
+}
+
+.continue-button {
+  background-color: white !important;
+  color: black !important;
+  font-size: clamp(1rem, 2.5vw, 1.25rem) !important;
+  font-weight: 400 !important;
+  padding: clamp(0.875rem, 2vw, 1.25rem) clamp(1.5rem, 3vw, 2.5rem) !important;
+  border-radius: 12px !important;
+  width: auto !important;
+  min-width: min(220px, 90%) !important;
+  max-width: 90% !important;
+  height: auto !important;
+  transition: all 0.3s ease !important;
+  border: none !important;
+  cursor: pointer;
+  text-align: center;
+  white-space: nowrap;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+  animation: fadeInUp 0.8s ease-out 0.3s backwards;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.2;
+}
+
+.continue-button:hover {
+  transform: translateY(-2px);
+  background-color: #f8f8f8 !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .hero-section {
+    padding-top: 60px;
+    min-height: 90vh;
+  }
+
+  .main-title {
+    font-size: 3rem;
+  }
+
+  .carousel-container {
+    font-size: 3rem;
+  }
+
+  .text-content p {
+    font-size: 1.125rem;
+    padding: 0 1rem;
+  }
+
+  .content-section {
+    padding: 1.5rem;
+  }
+
+  .continue-button {
+    min-width: min(200px, 95%) !important;
+    font-size: 1rem !important;
+    padding: 0.875rem 1.5rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-title {
+    font-size: 2.5rem;
+  }
+
+  .carousel-container {
+    font-size: 2.5rem;
+  }
+
+  .text-content p {
+    font-size: 1rem;
+  }
+
+  .continue-button {
+    min-width: min(180px, 100%) !important;
+    font-size: 0.875rem !important;
+    padding: 0.75rem 1.25rem !important;
+    white-space: normal;
+  }
+}
